@@ -1,0 +1,478 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>hexo+github搭建个人博客 | Live and learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="wuguangli">
+    
+
+    
+    <meta name="description" content="废了几个小时，终于搭好个人博客了。本人采用的是hexo+github搭建，使用的主题是jacman 工具准备 安装Node.js及配置Node.js环境 访问官网https://nodejs.org/en/下载最新版本，开始安装时点击add path，将npm和node路径添加系统路径。接下来一路next安装即可 安装完毕，进入cmd，分别输入node -v与npm -v能出现相应的版本号即成功">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2018/11/10/hexo-github搭建个人博客/index.html">
+<meta property="og:site_name" content="Live and learn">
+<meta property="og:description" content="废了几个小时，终于搭好个人博客了。本人采用的是hexo+github搭建，使用的主题是jacman 工具准备 安装Node.js及配置Node.js环境 访问官网https://nodejs.org/en/下载最新版本，开始安装时点击add path，将npm和node路径添加系统路径。接下来一路next安装即可 安装完毕，进入cmd，分别输入node -v与npm -v能出现相应的版本号即成功">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-10T15:41:54.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+github搭建个人博客">
+<meta name="twitter:description" content="废了几个小时，终于搭好个人博客了。本人采用的是hexo+github搭建，使用的主题是jacman 工具准备 安装Node.js及配置Node.js环境 访问官网https://nodejs.org/en/下载最新版本，开始安装时点击add path，将npm和node路径添加系统路径。接下来一路next安装即可 安装完毕，进入cmd，分别输入node -v与npm -v能出现相应的版本号即成功">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Live and learn" type="application/atom+xml">
+    
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Live and learn">Live and learn</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</ul></nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/11/10/hexo-github搭建个人博客/" title="hexo+github搭建个人博客" itemprop="url">hexo+github搭建个人博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="wuguangli" target="_blank" itemprop="author">wuguangli</a>
+		
+  </p><p class="article-time">
+    <time datetime="2018-11-10T11:58:29.000Z" itemprop="datePublished"> 发表于 2018-11-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Node-js及配置Node-js环境"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js及配置Node.js环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局安装hexo"><span class="toc-number">1.2.</span> <span class="toc-text">全局安装hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装git及配置git环境"><span class="toc-number">1.3.</span> <span class="toc-text">安装git及配置git环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册github账户，并新建一个respository"><span class="toc-number">1.4.</span> <span class="toc-text">注册github账户，并新建一个respository</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo并部署到github"><span class="toc-number">2.</span> <span class="toc-text">安装hexo并部署到github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化hexo并在本地运行"><span class="toc-number">2.1.</span> <span class="toc-text">初始化hexo并在本地运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署到github上"><span class="toc-number">2.2.</span> <span class="toc-text">部署到github上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用jacman主题"><span class="toc-number">3.</span> <span class="toc-text">使用jacman主题</span></a></li></ol>
+		
+		</div>
+		
+		<p><em>废了几个小时，终于搭好个人博客了。本人采用的是hexo+github搭建，使用的主题是jacman</em></p>
+<h3 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h3><ul>
+<li><h4 id="安装Node-js及配置Node-js环境"><a href="#安装Node-js及配置Node-js环境" class="headerlink" title="安装Node.js及配置Node.js环境"></a>安装Node.js及配置Node.js环境</h4><ul>
+<li>访问官网<code>https://nodejs.org/en/</code>下载最新版本，开始安装时点击add path，将npm和node路径添加系统路径。接下来一路next安装即可</li>
+<li>安装完毕，进入cmd，分别输入<code>node -v</code>与<code>npm -v</code>能出现相应的版本号即成功</li>
+</ul>
+</li>
+<li><h4 id="全局安装hexo"><a href="#全局安装hexo" class="headerlink" title="全局安装hexo"></a>全局安装hexo</h4><ul>
+<li>进入cmd，输入命令:<code>npm install hexo -g</code>全局安装hexo</li>
+<li>输入<code>hexo -v</code>出现相应版本即成功</li>
+</ul>
+</li>
+<li><h4 id="安装git及配置git环境"><a href="#安装git及配置git环境" class="headerlink" title="安装git及配置git环境"></a>安装git及配置git环境</h4><ul>
+<li>访问官网<code>https://git-scm.com/</code>下载最新版本，一路next即可</li>
+<li>安装完毕，进入cmd，输入<code>git --version</code>能出现版本号即成功</li>
+<li>git是一个非常好用的代码管理工具，若想详细了解git可访问<code>www.liaoxuefeng.com</code></li>
+</ul>
+</li>
+<li><h4 id="注册github账户，并新建一个respository"><a href="#注册github账户，并新建一个respository" class="headerlink" title="注册github账户，并新建一个respository"></a>注册github账户，并新建一个respository</h4><ul>
+<li>respository的名字为：你的github账户名.github.io</li>
+<li>类型为public</li>
+<li>勾选Initialize this repository with a README<h3 id="安装hexo并部署到github"><a href="#安装hexo并部署到github" class="headerlink" title="安装hexo并部署到github"></a>安装hexo并部署到github</h3><strong>在自己的电脑上找一个合适的位置，建一个文件夹，下面的操作都在这个文件下进行。我是在E盘根目录下建了一个叫blog_hexo的文件夹。</strong></li>
+</ul>
+</li>
+<li><h4 id="初始化hexo并在本地运行"><a href="#初始化hexo并在本地运行" class="headerlink" title="初始化hexo并在本地运行"></a>初始化hexo并在本地运行</h4><ul>
+<li>打开cmd，进入刚刚建的文件下（下面的所有操作都在这个文件下进行）<ul>
+<li>cmd中输入命令<code>E:</code> </li>
+<li><code>cd blog_hexo</code></li>
+</ul>
+</li>
+<li>初始化hexo<ul>
+<li>输入hexo init</li>
+<li>cmd中出现Start blogging with Hexo!择安装成功</li>
+<li>npm install安装需要的组件</li>
+</ul>
+</li>
+<li>在本地运行<ul>
+<li><code>hexo g</code></li>
+<li>开启服务<code>hexo s</code>，这时候会给你一个端口，访问这个端口就可以看到本地的效果了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h4><strong>若是第一次使用git，请设置git用户信息，并将公钥添加到github上</strong><br><strong>下面的所有操作仍进入cmd，在blog_hexo目录下进行</strong><ul>
+<li>打开blog_hexo文件夹下的_config.yml,为了方便，<strong>站点配置文件</strong> 特指这个文件，打开并找到<code>deploy:</code>这一行，加上<ul>
+<li><code>repository: git@github.com:你的用户名/你的用户名.github.io.git</code></li>
+<li><code>branch: master</code></li>
+</ul>
+</li>
+<li>安装扩展，输入<code>npm install hexo-deployer-git --save</code></li>
+<li>新建博客，输入<code>hexo new post &quot;博客名&quot;</code>,这是在_post文件夹上能看到刚刚创建的文件</li>
+<li>编辑好文章后，输入 hexo d -g,这时候就完成了，在浏览器中访问：<code>https://你的用户名.github.io/</code>就可以看到你写的文章了。<h3 id="使用jacman主题"><a href="#使用jacman主题" class="headerlink" title="使用jacman主题"></a>使用jacman主题</h3></li>
+<li>在blog_hexo文件夹上右键，选择Git Bash Here</li>
+<li>进入gitbash后，输入<code>git clone https://github.com/wuchong/jacman.git themes/jacman</code>，克隆成功后，在blog_hexo下的themes目录下可以看到克隆下的主题仓库</li>
+<li>修改站点配置文件，修改主题为theme为：jacman</li>
+<li>站点目录下还可配置博客名等</li>
+<li>关于jackman的配置指南请参考jackman作者写的博客<code>http://wuchong.me/jacman/how-to-use-jacman/</code></li>
+</ul>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git-github/">git/github</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/hexo/">hexo</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/11/10/hexo-github搭建个人博客/" data-title="hexo+github搭建个人博客 | Live and learn" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Node-js及配置Node-js环境"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js及配置Node.js环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局安装hexo"><span class="toc-number">1.2.</span> <span class="toc-text">全局安装hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装git及配置git环境"><span class="toc-number">1.3.</span> <span class="toc-text">安装git及配置git环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册github账户，并新建一个respository"><span class="toc-number">1.4.</span> <span class="toc-text">注册github账户，并新建一个respository</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo并部署到github"><span class="toc-number">2.</span> <span class="toc-text">安装hexo并部署到github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化hexo并在本地运行"><span class="toc-number">2.1.</span> <span class="toc-text">初始化hexo并在本地运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署到github上"><span class="toc-number">2.2.</span> <span class="toc-text">部署到github上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用jacman主题"><span class="toc-number">3.</span> <span class="toc-text">使用jacman主题</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/git-github/" title="git/github">git/github<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 一只热爱学习的菜鸟 <br>
+			且乐生前一杯酒，何须身后千载名</p>
+	</section>
+	 
+	<div class="social-font">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="wuguangli">wuguangli</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
