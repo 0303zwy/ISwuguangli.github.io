@@ -4,25 +4,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>217.存在重复元素 | Live and learn</title>
+    <title>c++文件操作 | Live and learn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wuguangli">
     
 
     
-    <meta name="description" content="leetcode 217存在重复元素">
-<meta name="keywords" content="数组">
+    <meta name="description" content="文件操作">
+<meta name="keywords" content="c++基本语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="217.存在重复元素">
-<meta property="og:url" content="http://yoursite.com/2018/12/10/217-存在重复元素/index.html">
+<meta property="og:title" content="c++文件操作">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/c-文件操作/index.html">
 <meta property="og:site_name" content="Live and learn">
-<meta property="og:description" content="leetcode 217存在重复元素">
+<meta property="og:description" content="文件操作">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T14:49:42.475Z">
+<meta property="og:updated_time" content="2019-03-21T14:59:22.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="217.存在重复元素">
-<meta name="twitter:description" content="leetcode 217存在重复元素">
+<meta name="twitter:title" content="c++文件操作">
+<meta name="twitter:description" content="文件操作">
 
     
     <link rel="alternative" href="/atom.xml" title="Live and learn" type="application/atom+xml">
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/12/10/217-存在重复元素/" title="217.存在重复元素" itemprop="url">217.存在重复元素</a>
+      <a href="/2019/03/21/c-文件操作/" title="c++文件操作" itemprop="url">c++文件操作</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wuguangli" target="_blank" itemprop="author">wuguangli</a>
 		
   </p><p class="article-time">
-    <time datetime="2018-12-10T14:51:20.000Z" itemprop="datePublished"> 发表于 2018-12-10</time>
+    <time datetime="2019-03-21T14:51:24.000Z" itemprop="datePublished"> 发表于 2019-03-21</time>
     
   </p>
 </header>
@@ -92,17 +92,23 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述："><span class="toc-number">1.</span> <span class="toc-text">题目描述：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例1："><span class="toc-number">1.1.</span> <span class="toc-text">示例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例2："><span class="toc-number">1.2.</span> <span class="toc-text">示例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例3："><span class="toc-number">1.3.</span> <span class="toc-text">示例3：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的思路"><span class="toc-number">2.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的代码"><span class="toc-number">3.</span> <span class="toc-text">我的代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#c-文件操作"><span class="toc-number">1.</span> <span class="toc-text">c++文件操作</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>给定一个整数数组，判断是否存在重复元素。</p>
-<p>如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false</p>
-<h4 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
-<h4 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
-<h4 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
-<h3 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h3><pre><code>暴力破解
-</code></pre><h3 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	class Solution &#123;</span><br><span class="line">	public boolean containsDuplicate(int[] nums) &#123;</span><br><span class="line">	    int count = 0;</span><br><span class="line">	    for(int i = 0;i&lt;nums.length;i++)&#123;</span><br><span class="line">	        for(int j = i+1;j&lt;nums.length;j++)&#123;</span><br><span class="line">	            if(nums[i]==nums[j])&#123;</span><br><span class="line">	                return true;</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    if((count != 0)&amp;&amp;(nums.length&gt;1))&#123;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;else&#123;</span><br><span class="line">	        return false;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<h4 id="c-文件操作"><a href="#c-文件操作" class="headerlink" title="c++文件操作"></a>c++文件操作</h4><p>​    今天做了2017年蓝桥杯省赛第一题，这题并没有像往常一样，出的是找规律或者是数日期的题，而是给了一个有着很多行数据的文本文档。这时候使用文本文档就很好用啦。</p>
+<p>​    这里列出题目中用到的几个函数。</p>
+<ul>
+<li>freopen(string  文件路径,  char 操作模式, 标准流文件)<ul>
+<li>例：<code>freopen(&quot;data.txt&quot;,&quot;r&quot;,stdin);</code></li>
+<li>标准流文件可以是stdin(标准输入流)，stdout()(标准输出流),stderr()(错误流)</li>
+</ul>
+</li>
+<li><p>stringstream类，常用于数据转换，使用stringstream一定要包含sstream头文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stringstream ss(s);//定义一个字符串流，并用字符串s初始化</span><br><span class="line">ss&gt;&gt;a&gt;&gt;b&gt;&gt;c;//将ss中的值传出给a,b,c;</span><br><span class="line">ss&lt;&lt;s1;//将s1的值输入</span><br></pre></td></tr></table></figure>
+<p>今天写的东西还是很低级的，但是对一个菜鸟来说也够了，不求进步神速，但求坚持长久。</p>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,13 +116,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/算法-leetcode/">算法/leetcode</a>
+  <a class="article-category-link" href="/categories/c-知识/">c++知识</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/数组/">数组</a>
+  <span></span> <a href="/tags/c-基本语法/">c++基本语法</a>
   </div>
 
 </div>
@@ -125,7 +131,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/12/10/217-存在重复元素/" data-title="217.存在重复元素 | Live and learn" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2019/03/21/c-文件操作/" data-title="c++文件操作 | Live and learn" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,19 +144,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2018/12/11/Java中HashMap/" title="Java中HashMap">
-  <strong>上一篇：</strong><br>
-  <span>
-  Java中HashMap</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/11/13/端口被占用解决方式/" title="端口被占用解决方式">
+<a href="/2018/12/11/Java中HashMap/" title="Java中HashMap">
  <strong>下一篇：</strong><br> 
- <span>端口被占用解决方式
+ <span>Java中HashMap
 </span>
 </a>
 </div>
@@ -167,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述："><span class="toc-number">1.</span> <span class="toc-text">题目描述：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例1："><span class="toc-number">1.1.</span> <span class="toc-text">示例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例2："><span class="toc-number">1.2.</span> <span class="toc-text">示例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例3："><span class="toc-number">1.3.</span> <span class="toc-text">示例3：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的思路"><span class="toc-number">2.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的代码"><span class="toc-number">3.</span> <span class="toc-text">我的代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#c-文件操作"><span class="toc-number">1.</span> <span class="toc-text">c++文件操作</span></a></li></ol>
  
   </div>
 
