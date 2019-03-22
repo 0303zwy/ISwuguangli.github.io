@@ -4,25 +4,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>hexo+github搭建个人博客 | Live and learn</title>
+    <title>cout()、memset()、sort() | Live and learn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wuguangli">
     
 
     
-    <meta name="description" content="1.环境安装 2.hexo本地部署 3.hexo部署到github上">
-<meta name="keywords" content="hexo">
+    <meta name="description" content="cout()、memset()、sort()">
+<meta name="keywords" content="c++基本语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+github搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/11/10/hexo-github搭建个人博客/index.html">
+<meta property="og:title" content="cout()、memset()、sort()">
+<meta property="og:url" content="http://yoursite.com/2019/03/22/cout-、memset-、sort/index.html">
 <meta property="og:site_name" content="Live and learn">
-<meta property="og:description" content="1.环境安装 2.hexo本地部署 3.hexo部署到github上">
+<meta property="og:description" content="cout()、memset()、sort()">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-13T02:26:45.299Z">
+<meta property="og:updated_time" content="2019-03-22T14:21:21.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo+github搭建个人博客">
-<meta name="twitter:description" content="1.环境安装 2.hexo本地部署 3.hexo部署到github上">
+<meta name="twitter:title" content="cout()、memset()、sort()">
+<meta name="twitter:description" content="cout()、memset()、sort()">
 
     
     <link rel="alternative" href="/atom.xml" title="Live and learn" type="application/atom+xml">
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/11/10/hexo-github搭建个人博客/" title="hexo+github搭建个人博客" itemprop="url">hexo+github搭建个人博客</a>
+      <a href="/2019/03/22/cout-、memset-、sort/" title="cout()、memset()、sort()" itemprop="url">cout()、memset()、sort()</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wuguangli" target="_blank" itemprop="author">wuguangli</a>
 		
   </p><p class="article-time">
-    <time datetime="2018-11-10T11:58:29.000Z" itemprop="datePublished"> 发表于 2018-11-10</time>
+    <time datetime="2019-03-22T14:17:40.000Z" itemprop="datePublished"> 发表于 2019-03-22</time>
     
   </p>
 </header>
@@ -92,73 +92,22 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Node-js及配置Node-js环境"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js及配置Node.js环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局安装hexo"><span class="toc-number">1.2.</span> <span class="toc-text">全局安装hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装git及配置git环境"><span class="toc-number">1.3.</span> <span class="toc-text">安装git及配置git环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册github账户，并新建一个respository"><span class="toc-number">1.4.</span> <span class="toc-text">注册github账户，并新建一个respository</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo并部署到github"><span class="toc-number">2.</span> <span class="toc-text">安装hexo并部署到github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化hexo并在本地运行"><span class="toc-number">2.1.</span> <span class="toc-text">初始化hexo并在本地运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署到github上"><span class="toc-number">2.2.</span> <span class="toc-text">部署到github上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用jacman主题"><span class="toc-number">3.</span> <span class="toc-text">使用jacman主题</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p><em>废了几个小时，终于搭好个人博客了。本人采用的是hexo+github搭建，使用的主题是jacman</em></p>
-<h3 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h3><ul>
-<li><h4 id="安装Node-js及配置Node-js环境"><a href="#安装Node-js及配置Node-js环境" class="headerlink" title="安装Node.js及配置Node.js环境"></a>安装Node.js及配置Node.js环境</h4></li>
-</ul>
+		<ul>
+<li><p>c++标准输出</p>
 <ul>
-<li>访问<a href="https://nodejs.org/en/" title="nodejs官网" target="_blank" rel="noopener">nodejs官网</a>下载最新版本，开始安装时点击add path，将npm和node路径添加系统路径。接下来一路next安装即可</li>
-<li>安装完毕，进入cmd，分别输入<code>node -v</code>与<code>npm -v</code>能出现相应的版本号即成功<ul>
-<li><h4 id="全局安装hexo"><a href="#全局安装hexo" class="headerlink" title="全局安装hexo"></a>全局安装hexo</h4></li>
+<li><code>cout&lt;&lt;hex;//不输出任何，表示接下来以十六进制输出</code></li>
+<li><code>cout&lt;&lt;oct;//不输出任何，表示接下来以八进制输出</code></li>
+<li><code>cout&lt;&lt;setw(4)&lt;&lt;i&lt;&lt;setfill(&#39;0&#39;);//i占4位宽度，不足补0，默认右对齐，使用这两个要包含iomanip头文件</code></li>
 </ul>
 </li>
-<li>进入cmd，输入命令:<code>npm install hexo -g</code>全局安装hexo</li>
-<li>输入<code>hexo -v</code>出现相应版本即成功<ul>
-<li><h4 id="安装git及配置git环境"><a href="#安装git及配置git环境" class="headerlink" title="安装git及配置git环境"></a>安装git及配置git环境</h4></li>
-</ul>
+<li><p>sort(start,end,排序方法)，默认升序，可自定义，会改变数组</p>
 </li>
-</ul>
-<ul>
-<li>访问<a href="https://git-scm.com/" title="git官网" target="_blank" rel="noopener">git官网</a>下载最新版本，一路next即可</li>
-<li>安装完毕，进入cmd，输入<code>git --version</code>能出现版本号即成功</li>
-<li>git是一个非常好用的代码管理工具，若想详细了解git可访问<a href="www.liaoxuefeng.com" title="git教程">廖雪峰git教程</a><ul>
-<li><h4 id="注册github账户，并新建一个respository"><a href="#注册github账户，并新建一个respository" class="headerlink" title="注册github账户，并新建一个respository"></a>注册github账户，并新建一个respository</h4></li>
-</ul>
+<li><p>memset(起始地址，值，要赋值的字节数)，包含在cstring头文件中</p>
 </li>
-<li>respository的名字为：你的github账户名.github.io</li>
-<li>类型为public</li>
-<li>勾选Initialize this repository with a README<h3 id="安装hexo并部署到github"><a href="#安装hexo并部署到github" class="headerlink" title="安装hexo并部署到github"></a>安装hexo并部署到github</h3><strong>在自己的电脑上找一个合适的位置，建一个文件夹，下面的操作都在这个文件下进行。我是在E盘根目录下建了一个叫blog_hexo的文件夹。</strong><ul>
-<li><h4 id="初始化hexo并在本地运行"><a href="#初始化hexo并在本地运行" class="headerlink" title="初始化hexo并在本地运行"></a>初始化hexo并在本地运行</h4></li>
-</ul>
-</li>
-<li>打开cmd，进入刚刚建的文件下（下面的所有操作都在这个文件下进行）<ul>
-<li>cmd中输入命令<code>E:</code> </li>
-<li><code>cd blog_hexo</code></li>
-</ul>
-</li>
-<li>初始化hexo<ul>
-<li>输入hexo init</li>
-<li>cmd中出现Start blogging with Hexo!择安装成功</li>
-<li>npm install安装需要的组件</li>
-</ul>
-</li>
-<li><p>在本地运行</p>
-<ul>
-<li><code>hexo g</code></li>
-<li>开启服务<code>hexo s</code>，这时候会给你一个端口，访问这个端口就可以看到本地的效果了</li>
-</ul>
-<ul>
-<li><h4 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h4><strong>若是第一次使用git，请设置git用户信息，并将公钥添加到github上</strong><br><strong>下面的所有操作仍进入cmd，在blog_hexo目录下进行</strong></li>
-</ul>
-</li>
-<li><p>打开blog_hexo文件夹下的_config.yml,为了方便，<strong>站点配置文件</strong> 特指这个文件，打开并找到<code>deploy:</code>这一行，加上</p>
-<ul>
-<li><code>repository: git@github.com:你的用户名/你的用户名.github.io.git</code></li>
-<li><code>branch: master</code></li>
-</ul>
-</li>
-<li>安装扩展，输入<code>npm install hexo-deployer-git --save</code></li>
-<li>新建博客，输入<code>hexo new post &quot;博客名&quot;</code>,这是在_post文件夹上能看到刚刚创建的文件</li>
-<li>编辑好文章后，输入 hexo d -g,这时候就完成了，在浏览器中访问：<code>https://你的用户名.github.io/</code>就可以看到你写的文章了。<h3 id="使用jacman主题"><a href="#使用jacman主题" class="headerlink" title="使用jacman主题"></a>使用jacman主题</h3></li>
-<li>在blog_hexo文件夹上右键，选择Git Bash Here</li>
-<li>进入gitbash后，输入<code>git clone https://github.com/wuchong/jacman.git themes/jacman</code>，克隆成功后，在blog_hexo下的themes目录下可以看到克隆下的主题仓库</li>
-<li>修改站点配置文件，修改主题为theme为：jacman</li>
-<li>站点目录下还可配置博客名等</li>
-<li>关于jackman的配置指南请参考<a href="http://wuchong.me/jacman/how-to-use-jacman" target="_blank" rel="noopener">jackman作者博客</a></li>
 </ul>
   
 	</div>
@@ -167,13 +116,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/git-github/">git/github</a>
+  <a class="article-category-link" href="/categories/c-知识/">c++知识</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/c-基本语法/">c++基本语法</a>
   </div>
 
 </div>
@@ -182,7 +131,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/11/10/hexo-github搭建个人博客/" data-title="hexo+github搭建个人博客 | Live and learn" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2019/03/22/cout-、memset-、sort/" data-title="cout()、memset()、sort() | Live and learn" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -195,14 +144,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2018/11/13/端口被占用解决方式/" title="端口被占用解决方式">
-  <strong>上一篇：</strong><br>
-  <span>
-  端口被占用解决方式</span>
+
+<div class="next">
+<a href="/2019/03/21/c-文件操作/" title="c++文件操作">
+ <strong>下一篇：</strong><br> 
+ <span>c++文件操作
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -216,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Node-js及配置Node-js环境"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js及配置Node.js环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局安装hexo"><span class="toc-number">1.2.</span> <span class="toc-text">全局安装hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装git及配置git环境"><span class="toc-number">1.3.</span> <span class="toc-text">安装git及配置git环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册github账户，并新建一个respository"><span class="toc-number">1.4.</span> <span class="toc-text">注册github账户，并新建一个respository</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo并部署到github"><span class="toc-number">2.</span> <span class="toc-text">安装hexo并部署到github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化hexo并在本地运行"><span class="toc-number">2.1.</span> <span class="toc-text">初始化hexo并在本地运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署到github上"><span class="toc-number">2.2.</span> <span class="toc-text">部署到github上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用jacman主题"><span class="toc-number">3.</span> <span class="toc-text">使用jacman主题</span></a></li></ol>
+ 
  
   </div>
 
