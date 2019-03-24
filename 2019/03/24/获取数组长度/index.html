@@ -4,25 +4,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>c++文件操作 | Live and learn</title>
+    <title>获取数组长度 | Live and learn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wuguangli">
     
 
     
-    <meta name="description" content="文件操作">
+    <meta name="description" content="cout()、memset()、sort()">
 <meta name="keywords" content="c++基本语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++文件操作">
-<meta property="og:url" content="http://yoursite.com/2019/03/21/c-文件操作/index.html">
+<meta property="og:title" content="获取数组长度">
+<meta property="og:url" content="http://yoursite.com/2019/03/24/获取数组长度/index.html">
 <meta property="og:site_name" content="Live and learn">
-<meta property="og:description" content="文件操作">
+<meta property="og:description" content="cout()、memset()、sort()">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-23T13:35:39.818Z">
+<meta property="og:updated_time" content="2019-03-24T15:24:15.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c++文件操作">
-<meta name="twitter:description" content="文件操作">
+<meta name="twitter:title" content="获取数组长度">
+<meta name="twitter:description" content="cout()、memset()、sort()">
 
     
     <link rel="alternative" href="/atom.xml" title="Live and learn" type="application/atom+xml">
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/21/c-文件操作/" title="c++文件操作" itemprop="url">c++文件操作</a>
+      <a href="/2019/03/24/获取数组长度/" title="获取数组长度" itemprop="url">获取数组长度</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wuguangli" target="_blank" itemprop="author">wuguangli</a>
 		
   </p><p class="article-time">
-    <time datetime="2019-03-21T14:51:24.000Z" itemprop="datePublished"> 发表于 2019-03-21</time>
+    <time datetime="2019-03-24T15:11:51.000Z" itemprop="datePublished"> 发表于 2019-03-24</time>
     
   </p>
 </header>
@@ -92,22 +92,14 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#c-文件操作"><span class="toc-number">1.</span> <span class="toc-text">c++文件操作</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取数组长度"><span class="toc-number">1.</span> <span class="toc-text">获取数组长度</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="c-文件操作"><a href="#c-文件操作" class="headerlink" title="c++文件操作"></a>c++文件操作</h3><p>​    今天做了2017年蓝桥杯省赛第一题，这题并没有像往常一样，出的是找规律或者是数日期的题，而是给了一个有着很多行数据的文本文档。这时候使用文本文档就很好用啦。</p>
-<p>​    这里列出题目中用到的几个函数。</p>
-<ul>
-<li>freopen(string  文件路径,  char 操作模式, 标准流文件)<ul>
-<li>例：<code>freopen(&quot;data.txt&quot;,&quot;r&quot;,stdin);</code></li>
-<li>标准流文件可以是stdin(标准输入流)，stdout()(标准输出流),stderr()(错误流)</li>
-</ul>
-</li>
-<li><p>stringstream类，常用于数据转换，使用stringstream一定要包含sstream头文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stringstream ss(s);//定义一个字符串流，并用字符串s初始化</span><br><span class="line">ss&gt;&gt;a&gt;&gt;b&gt;&gt;c;//将ss中的值传出给a,b,c;</span><br><span class="line">ss&lt;&lt;s1;//将s1的值输入</span><br></pre></td></tr></table></figure>
-<p>今天写的东西还是很低级的，但是对一个菜鸟来说也够了，不求进步神速，但求坚持长久。</p>
-</li>
+		<h3 id="获取数组长度"><a href="#获取数组长度" class="headerlink" title="获取数组长度"></a>获取数组长度</h3><ul>
+<li>获取动态数组长度strlen()</li>
+<li>string类对象的成员函数str.length(),str.size()</li>
+<li>求整型数组长度length=sizeof(a)/sizeof(int)s</li>
 </ul>
   
 	</div>
@@ -131,7 +123,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2019/03/21/c-文件操作/" data-title="c++文件操作 | Live and learn" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2019/03/24/获取数组长度/" data-title="获取数组长度 | Live and learn" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -144,19 +136,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/22/cout-、memset-、sort/" title="cout()、memset()、sort()">
-  <strong>上一篇：</strong><br>
-  <span>
-  cout()、memset()、sort()</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/12/11/Java中HashMap/" title="Java中HashMap">
+<a href="/2019/03/23/最大子列和/" title="最大子列和">
  <strong>下一篇：</strong><br> 
- <span>Java中HashMap
+ <span>最大子列和
 </span>
 </a>
 </div>
@@ -173,7 +157,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#c-文件操作"><span class="toc-number">1.</span> <span class="toc-text">c++文件操作</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取数组长度"><span class="toc-number">1.</span> <span class="toc-text">获取数组长度</span></a></li></ol>
  
   </div>
 
