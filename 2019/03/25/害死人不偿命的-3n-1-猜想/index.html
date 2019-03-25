@@ -4,25 +4,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>最大子列和 | Live and learn</title>
+    <title>害死人不偿命的(3n+1)猜想 | Live and learn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wuguangli">
     
 
     
-    <meta name="description" content="线性复杂度求最大子列和">
-<meta name="keywords" content="基础算法">
+    <meta name="description" content="卡拉滋猜想">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最大子列和">
-<meta property="og:url" content="http://yoursite.com/2019/03/23/最大子列和/index.html">
+<meta property="og:title" content="害死人不偿命的(3n+1)猜想">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/害死人不偿命的-3n-1-猜想/index.html">
 <meta property="og:site_name" content="Live and learn">
-<meta property="og:description" content="线性复杂度求最大子列和">
+<meta property="og:description" content="卡拉滋猜想">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-23T13:50:10.658Z">
+<meta property="og:updated_time" content="2019-03-25T13:38:20.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最大子列和">
-<meta name="twitter:description" content="线性复杂度求最大子列和">
+<meta name="twitter:title" content="害死人不偿命的(3n+1)猜想">
+<meta name="twitter:description" content="卡拉滋猜想">
 
     
     <link rel="alternative" href="/atom.xml" title="Live and learn" type="application/atom+xml">
@@ -76,14 +75,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/23/最大子列和/" title="最大子列和" itemprop="url">最大子列和</a>
+      <a href="/2019/03/25/害死人不偿命的-3n-1-猜想/" title="害死人不偿命的(3n+1)猜想" itemprop="url">害死人不偿命的(3n+1)猜想</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wuguangli" target="_blank" itemprop="author">wuguangli</a>
 		
   </p><p class="article-time">
-    <time datetime="2019-03-23T13:43:29.000Z" itemprop="datePublished"> 发表于 2019-03-23</time>
+    <time datetime="2019-03-25T13:15:24.000Z" itemprop="datePublished"> 发表于 2019-03-25</time>
     
   </p>
 </header>
@@ -92,26 +91,26 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大子列和问题"><span class="toc-number">1.</span> <span class="toc-text">最大子列和问题</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">2.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">3.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">4.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">5.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="最大子列和问题"><a href="#最大子列和问题" class="headerlink" title="最大子列和问题"></a>最大子列和问题</h3><p>看了陈越姥姥的数据结构之后写的，思想就是去掉不能使结果增大的子列。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int a[6] = &#123;-5,3,-4,6,5,-2&#125;;</span><br><span class="line">	int cur = 0;</span><br><span class="line">	int max = 0;</span><br><span class="line">	for(int i=0;i&lt;sizeof(a)/sizeof(int);i++)&#123;</span><br><span class="line">		cur+=a[i];</span><br><span class="line">		if(cur&lt;0)&#123;</span><br><span class="line">			cur=0;</span><br><span class="line">		&#125; </span><br><span class="line">		if(cur&gt;max)&#123;</span><br><span class="line">			max = cur;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;&quot;cur=&quot;&lt;&lt;cur&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; max &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+		<p>想报九月乙级，现在开始每天一或两题。</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>卡拉兹(Callatz)猜想：<br>对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证 (3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……<br>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过 1000 的正整数 n，简单地数一下，需要多少步（砍几下）才能得到 n=1？</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例，即给出正整数 n 的值。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出从 n 计算到 1 需要的步数。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>3</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>5</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PAT B1001 害死人不偿命的(3n+1)猜想 </span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,step=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">while</span>(n!=<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">n = n/<span class="number">2</span>;</span><br><span class="line">			step++;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			n = (<span class="number">3</span>*n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">			step++; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; step;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
+  <a class="article-category-link" href="/categories/PAT乙级刷题笔记/">PAT乙级刷题笔记</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/基础算法/">基础算法</a>
-  </div>
 
 </div>
 
@@ -119,7 +118,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2019/03/23/最大子列和/" data-title="最大子列和 | Live and learn" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2019/03/25/害死人不偿命的-3n-1-猜想/" data-title="害死人不偿命的(3n+1)猜想 | Live and learn" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -132,19 +131,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/24/获取数组长度/" title="获取数组长度">
-  <strong>上一篇：</strong><br>
-  <span>
-  获取数组长度</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/22/cout-、memset-、sort/" title="cout()、memset()、sort()">
+<a href="/2019/03/24/获取数组长度/" title="获取数组长度">
  <strong>下一篇：</strong><br> 
- <span>cout()、memset()、sort()
+ <span>获取数组长度
 </span>
 </a>
 </div>
@@ -161,7 +152,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大子列和问题"><span class="toc-number">1.</span> <span class="toc-text">最大子列和问题</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">2.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">3.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">4.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">5.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
  
   </div>
 
