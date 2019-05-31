@@ -4,25 +4,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>217.存在重复元素 | Live and learn</title>
+    <title>PAT B1023 | Live and learn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wuguangli">
     
 
     
-    <meta name="description" content="leetcode 217存在重复元素">
-<meta name="keywords" content="数组">
+    <meta name="description" content="现给定数字，输出能够组成的最小的数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="217.存在重复元素">
-<meta property="og:url" content="http://yoursite.com/2018/12/10/217-存在重复元素/index.html">
+<meta property="og:title" content="PAT B1023">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/PAT-B1023/index.html">
 <meta property="og:site_name" content="Live and learn">
-<meta property="og:description" content="leetcode 217存在重复元素">
+<meta property="og:description" content="现给定数字，输出能够组成的最小的数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T14:49:42.475Z">
+<meta property="og:updated_time" content="2019-05-30T13:53:17.377Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="217.存在重复元素">
-<meta name="twitter:description" content="leetcode 217存在重复元素">
+<meta name="twitter:title" content="PAT B1023">
+<meta name="twitter:description" content="现给定数字，输出能够组成的最小的数。">
 
     
     <link rel="alternative" href="/atom.xml" title="Live and learn" type="application/atom+xml">
@@ -76,14 +75,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/12/10/217-存在重复元素/" title="217.存在重复元素" itemprop="url">217.存在重复元素</a>
+      <a href="/2019/05/30/PAT-B1023/" title="PAT B1023" itemprop="url">PAT B1023</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wuguangli" target="_blank" itemprop="author">wuguangli</a>
 		
   </p><p class="article-time">
-    <time datetime="2018-12-10T14:51:20.000Z" itemprop="datePublished"> 发表于 2018-12-10</time>
+    <time datetime="2019-05-30T13:38:07.000Z" itemprop="datePublished"> 发表于 2019-05-30</time>
     
   </p>
 </header>
@@ -92,32 +91,26 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述："><span class="toc-number">1.</span> <span class="toc-text">题目描述：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例1："><span class="toc-number">1.1.</span> <span class="toc-text">示例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例2："><span class="toc-number">1.2.</span> <span class="toc-text">示例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例3："><span class="toc-number">1.3.</span> <span class="toc-text">示例3：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的思路"><span class="toc-number">2.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的代码"><span class="toc-number">3.</span> <span class="toc-text">我的代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-number">4.</span> <span class="toc-text">输入样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-number">5.</span> <span class="toc-text">输出样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的思路"><span class="toc-number">6.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>给定一个整数数组，判断是否存在重复元素。</p>
-<p>如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false</p>
-<h4 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
-<h4 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
-<h4 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
-<h3 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h3><pre><code>暴力破解
-</code></pre><h3 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	class Solution &#123;</span><br><span class="line">	public boolean containsDuplicate(int[] nums) &#123;</span><br><span class="line">	    int count = 0;</span><br><span class="line">	    for(int i = 0;i&lt;nums.length;i++)&#123;</span><br><span class="line">	        for(int j = i+1;j&lt;nums.length;j++)&#123;</span><br><span class="line">	            if(nums[i]==nums[j])&#123;</span><br><span class="line">	                return true;</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    if((count != 0)&amp;&amp;(nums.length&gt;1))&#123;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;else&#123;</span><br><span class="line">	        return false;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  
+		<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定数字0-9各若干个。你可以以任意顺序排列这些数字，但必须全部使用。目标是使得最后得到的数尽可能小（注意0不能做首位）。例如：给定两个0，两个1，三个5，一个8，我们得到的最小的数就是10015558。<br>现给定数字，请编写程序输出能够组成的最小的数。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>每个输入包含1个测试用例。每个测试用例在一行中给出10个非负整数，顺序表示我们拥有数字0、数字1、……数字9的个数。整数间用一个空格分隔。10个数字的总个数不超过50，且至少拥有1个非0的数字。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>在一行中输出能够组成的最小的数。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><p>2 2 0 0 0 3 0 0 1 0</p>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><p>10015558</p>
+<h3 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h3><p>这道题属于简单题，用数组序号对应0~9即可。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int a[9];</span><br><span class="line">	for(int i=0;i&lt;10;i++)&#123;</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=1;i&lt;10;i++)&#123;</span><br><span class="line">		if(a[i]!=0)&#123;</span><br><span class="line">			cout&lt;&lt;i;</span><br><span class="line">			a[i]--;</span><br><span class="line">		&#125;</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=0;i&lt;10;i++)&#123;</span><br><span class="line">		while(a[i]!=0)&#123;</span><br><span class="line">			cout&lt;&lt;i;</span><br><span class="line">			a[i]--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/算法-leetcode/">算法/leetcode</a>
+  <a class="article-category-link" href="/categories/PAT乙级刷题笔记/">PAT乙级刷题笔记</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/数组/">数组</a>
-  </div>
 
 </div>
 
@@ -125,7 +118,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/12/10/217-存在重复元素/" data-title="217.存在重复元素 | Live and learn" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2019/05/30/PAT-B1023/" data-title="PAT B1023 | Live and learn" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -139,18 +132,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev">
- <a href="/2018/12/11/Java中HashMap/" title="Java中HashMap">
+ <a href="/2019/05/31/PAT-B1011/" title="PAT B1011">
   <strong>上一篇：</strong><br>
   <span>
-  Java中HashMap</span>
+  PAT B1011</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2018/11/13/端口被占用解决方式/" title="端口被占用解决方式">
+<a href="/2019/03/26/1002-写出这个数/" title="1002 写出这个数">
  <strong>下一篇：</strong><br> 
- <span>端口被占用解决方式
+ <span>1002 写出这个数
 </span>
 </a>
 </div>
@@ -167,7 +160,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述："><span class="toc-number">1.</span> <span class="toc-text">题目描述：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例1："><span class="toc-number">1.1.</span> <span class="toc-text">示例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例2："><span class="toc-number">1.2.</span> <span class="toc-text">示例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例3："><span class="toc-number">1.3.</span> <span class="toc-text">示例3：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的思路"><span class="toc-number">2.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的代码"><span class="toc-number">3.</span> <span class="toc-text">我的代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-number">4.</span> <span class="toc-text">输入样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-number">5.</span> <span class="toc-text">输出样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的思路"><span class="toc-number">6.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
